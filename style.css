@@ -1,0 +1,98 @@
+
+.icons{
+    text-align : center;
+}
+.icons a{
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.fa-brands.fa-facebook.fa-3x{
+    color:rgb(21, 146, 255);
+    
+
+}
+.fa-brands.fa-instagram.fa-3x{
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right ,orange,red,rgb(187, 52, 75) );
+}
+.fa-brands.fa-discord.fa-3x{
+    color:rgb(88, 101, 242);
+}
+.fa-solid.fa-envelope.fa-3x{
+   
+    color:rgb(168, 40, 40);
+}
+.fa-solid.fa-solid.fa-house{
+    color:rgb(233, 214, 214);
+    
+}
+/* button */
+.btn{
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+}
+.btn::after{
+    content:"";
+    z-index: -1;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/*glow*/
+
+.btn::before{
+    content: "";
+    background:linear-gradient(
+        45deg,
+        #FF0000,#FF7300,#FFFB00,#48ff00,
+        #00FFD5,#002BFF,#FF00C8,#FF0000
+    ) ;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+@keyframes glowing{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+/*hover*/
+.btn:hover::before{
+    opacity: 1;
+}
+.btn:active:after{
+    background: transparent;
+}
+
+.btn:active{
+    color:#000;
+    font-weight: bold;
+
+}
